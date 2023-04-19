@@ -2,11 +2,11 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import Todo from './todo';
 
-export default function todos({ todos, handleTodoSelect, navigation }) {
+export default function todos({ todos, handleTodoSelect, navigation, setTodos }) {
     return (
         <View>
             {todos.map((todo, index) => (
-                <Todo todo={todo} key={index} index={index} navigation={navigation} onSelect={handleTodoSelect} />
+                <Todo todos={todos} todo={todo} key={index} index={index} navigation={navigation} onSelect={handleTodoSelect} setTodos={setTodos} />
             ))}
         </View>
     );
